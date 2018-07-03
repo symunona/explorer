@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="../node_modules/font-awesome/css/font-awesome.css">
+    
+    <title>Explorer</title>
+</head>
+
+<body>
+    <div class="app">
+        <div class="intro">
+            <h2>
+                Welcome to
+                <br>
+                <img src="img/w.png" class="logo">
+                <br> World Explorer
+            </h2>
+            <p class="start-game-code">Please provide your game code</p>
+            <p class="error">&nbsp;</p>
+            <input id="game-key" placeholder="key to your adventure">
+            <br>
+            <button id="load-game">Take me to a journey!</button>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+
+        </div>
+        <div class="loading">
+            <i class="fa fa-circle-notch fa-spin"></i>
+            <div class="message"></div>
+        </div>
+        <div class="start">
+            <h1><button class="back">&lt;</button><span class="game-title"></span></h1>
+            <div class="screen">
+                <div class="content"></div>                
+                <button id="start-game">Start</button>
+            </div>
+        </div>
+        <div class="challange">
+            <h1></h1>
+            <div class="screen">
+                <div class="content"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../node_modules/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>

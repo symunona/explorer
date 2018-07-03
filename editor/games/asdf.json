@@ -1,0 +1,29 @@
+{
+    "id": "asdf",
+    "password": "password",
+    "name": "Pöri célokat keres",    
+    "description": "Todo: Mi ez, hogy működik, mit csinálj, mit ne csinálj, mire számíts, mit vigyél magaddal",    
+    "rules": {
+        "date": {},
+        "time": {
+            "after": "08:00",
+            "before": "18:00"
+        }
+    },
+    "challenges": [
+        {
+            "id": 1,
+            "title": "Hello.",
+            "description": "Ez egy teszt uzenet",
+            "time": "1"
+        },
+        {
+            "id": 2,
+            "title": "Do something",
+            "description": "Guggolj le.",
+            "time": "2"
+        }
+    ]
+        
+    
+}

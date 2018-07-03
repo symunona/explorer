@@ -1,0 +1,15 @@
+{
+  "name": "explorer-editor",
+  "version": "1.0.0",
+  "description": "simply json",
+  "main": "editor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@json-editor/json-editor": "^1.1.0-beta.1",
+    "bootstrap": "^4.1.1"
+  }
+}
