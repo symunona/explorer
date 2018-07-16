@@ -7,7 +7,7 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="../node_modules/font-awesome/css/font-awesome.css">
+    <!-- <link rel="stylesheet" type="text/css" href="vendor/font-awesome/css/font-awesome.css"> -->
     
     <title>Explorer</title>
 </head>
@@ -44,15 +44,22 @@
             </div>
         </div>
         <div class="challange">
-            <h1></h1>
+            <h1>
+                <button class="back">&lt;</button>
+                <span class="title"></span>
+            </h1>
             <div class="screen">
                 <div class="content"></div>
+                <div class="ctrl-buttons">
+                    <button class="back">&lt;</button>
+                    <button class="forward">&gt;</button>
+                </div>
             </div>
         </div>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../node_modules/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="vendor/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="vendor/moment/min/moment.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 </body>
 
