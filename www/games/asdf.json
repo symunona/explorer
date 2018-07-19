@@ -29,6 +29,11 @@
             "title": "Vége",
             "description": "Aztán valami lesz",
             "time": 12
+        },
+        {            
+            "title": "In an hour",
+            "description": "This should happen in an hour.",
+            "time": 3600
         }
     ]
         

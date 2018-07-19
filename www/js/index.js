@@ -18,6 +18,8 @@
  */
 const APP_STORAGE_KEY = 'game-on';
 
+const BASE_URL = 'https://explorer.benthegoose.com'
+
 var app = {
     // Application Constructor
     initialize: function () {
@@ -113,6 +115,7 @@ var app = {
             app.game.startTime = undefined;
             app.game.currentChallenge = 0;
             cordova.plugins.notification.local.clearAll();
+            cordova.plugins.notification.local.cancelAll();
             app.saveGame();
             app.showStartGame();
         })
@@ -128,20 +131,18 @@ var app = {
 
     // Update DOM on a Received Event
     receivedEvent: function (id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+        // var parentElement = document.getElementById(id);
+        // var listeningElement = parentElement.querySelector('.listening');
+        // var receivedElement = parentElement.querySelector('.received');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+        // listeningElement.setAttribute('style', 'display:none;');
+        // receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
+        // console.log('Received Event: ' + id);
     },
 
     onDownloadGame: function (key) {
-        if (!key) { return; }
-
-        // app.queryForPermissions();
+        if (!key) { return; }        
 
         $.ajax({ url: 'games/' + key + '.json', contentType: 'application/json' }).then(function (gameData) {
             if (typeof (gameData) === 'string') gameData = JSON.parse(gameData);
@@ -251,35 +252,6 @@ var app = {
         }
     },
 
-    queryForPermissions: function () {
-
-        if (!window.cordova) return;
-
-        cordova.plugins.notification.local.hasPermission(function (granted) {
-
-            var triggerTime = moment().add(5, 'seconds').toDate();
-            console.log(triggerTime)
-            cordova.plugins.notification.local.schedule({
-                id: 1,
-                title: 'Sample notification',
-                text: '5 seconds in...',
-                icon: 'res://e',
-                at: triggerTime
-            });
-
-            var trigger2Time = moment().add(15, 'seconds').toDate();
-            console.log(trigger2Time)
-            cordova.plugins.notification.local.schedule({
-                id: 2,
-                title: 'and another one...',
-                text: '15 seconds in...',
-                icon: 'res://e',
-                at: trigger2Time
-            });
-
-        });
-
-    }
 };
 
 app.initialize();
