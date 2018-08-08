@@ -141,16 +141,18 @@ var app = {
         // console.log('Received Event: ' + id);
     },
 
-    onDownloadGame: function (key) {
-        if (!key) { return; }        
-
-        $.ajax({ url: 'games/' + key + '.json', contentType: 'application/json' }).then(function (gameData) {
+    onDownloadGame: function (key) {        
+        if (!key) { return; }       
+        app.loading('Loading game...')         
+        // $.ajax({ url: 'games/' + key + '.json', contentType: 'application/json' })
+        return loadGame(key).then(function (gameData) {
             if (typeof (gameData) === 'string') gameData = JSON.parse(gameData);
             app.game = gameData;
             app.saveGame();
             app.showStartGame();
         }).fail(function () {
-            $('.error').html('Game loading error. Try another one.')
+            app.showPage('intro');
+            $('.error').html('Game loading error. Try another one.')            
         })
     },
 
@@ -227,7 +229,7 @@ var app = {
             return {
                 id: i + 1,
                 title: c.title,
-                text: c.description.substr(0, 40),
+                text: stripHtml(c.description).substr(0, 40),
                 icon: 'res://e',
                 ongoing: true,
                 at: moment(app.game.startTime).add(c.time, 'seconds').toDate()
@@ -253,6 +255,12 @@ var app = {
     },
 
 };
+
+function stripHtml(html) {
+    var tmp = document.createElement("DIV");
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || "";
+}
 
 app.initialize();
 
