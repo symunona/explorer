@@ -4,15 +4,7 @@ function loadGame(gameId){
     var def = $.Deferred();
 
     if (_firstLoad){
-        // Init Firebase.
-        var config = {
-            apiKey: "AIzaSyCXmDPWB2Ww7WfytNANHkKXEjBsNfehFIs",
-            authDomain: "explorer-8bb1d.firebaseapp.com",
-            databaseURL: "https://explorer-8bb1d.firebaseio.com",
-            projectId: "explorer-8bb1d",
-            storageBucket: "explorer-8bb1d.appspot.com",
-            messagingSenderId: "88000557828"
-        };
+        // Init Firebase. Config loaded in another file.        
         firebase.initializeApp(config);
         _firstLoad = false;
     }
